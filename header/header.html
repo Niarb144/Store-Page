@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Imaara Mall</title>
+
+    <link rel="icon" type="image/png" href="">
+    <link rel="stylesheet" href="header.css">
+</head>
+<body>
+    <!--Header-->
+
+    <!--Top Navbar-->
+    <div class="top-bar">
+        <div class="socials-container">
+            <div class="status">
+                <p id="status-text"></p>
+            </div>
+        </div>
+
+        <div class = "logo-container">
+            <!--Logo-->
+            <div class = "logo">
+                <img src="./img/imaaralogo (2).png" alt="logo" />
+            </div>
+            <!--Logo-end-->
+        </div>
+
+        <!--Search-->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button id="search-button">Search</button>
+        </div>
+
+    </div>
+    
+    <!--White Navbar-->
+    <nav class="navbar">
+        <ul class="links">
+            <!--Shopping-->
+            <li class="dropdown">
+                <a href = "">Shops</a>
+                <div class="dropdown-content">
+                    <a href="#">Item 1</a>
+                    <a href="#">Item 2</a>
+                    <a href="#">Item 3</a>
+                </div>
+            </li>
+
+            <li class="dropdown">
+                <a href = "">Entertainment</a>
+                <div class="dropdown-content">
+                    <a href="#">Item 1</a>
+                    <a href="#">Item 2</a>
+                    <a href="#">Item 3</a>
+                </div>
+            </li>
+
+            <li class="dropdown">
+                <a href = "">Dine</a>
+                <div class="dropdown-content">
+                    <a href="#">Item 1</a>
+                    <a href="#">Item 2</a>
+                    <a href="#">Item 3</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href = "" >Services</a>
+                <div class="dropdown-content">
+                    <a href="#">Item 1</a>
+                    <a href="#">Item 2</a>
+                    <a href="#">Item 3</a>
+                </div>
+            </li>
+        </ul>
+
+        <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        
+    </nav>
+
+    <!--black navbar-->
+    <div class="nav-container">
+        <ul class="links">
+            <li><a href="">Offers</a></li>
+            <li><a href="">Events</a></li>
+            <li><a href="">Gallery</a></li>
+            <li><a href="">Map</a></li>
+            <li><a href="">Parking</a></li>
+        </ul>
+    </div>
+    <!--Header-end-->
+
+    <!--Store Content-->
+    <!--Store Offers-->
+    <div class="slider-container">
+        <h2>Store Offers</h2>
+        
+        <div class="slider">
+            <div class="slide"><img src="./img/Chicken Inn 2.png" alt="Image 1"></div>
+            <div class="slide"><img src="./img/LI Logo New_WhiteText_Black (1).png" alt="Image 2"></div>
+            <div class="slide"><img src="./img/lorenzo.png" alt="Image 3"></div>
+            <div class="slide"><img src="./img/optica-1.png" alt="Image 4"></div>
+            <div class="slide"><img src="./img/Samsung-Symbol.png" alt="Image 5"></div>
+            <!-- Add more slides as needed -->
+        </div>
+        <div class="prev" onclick="prevSlide()">&#10094;</div>
+        <div class="next" onclick="nextSlide()">&#10095;</div>
+    </div>
+
+    <!--Filters-->
+    <div class="filter-container">
+        <!--Dropdown Filter-->
+        <div class="dropdown">
+            <h3>Category</h3>
+            <div class="dropdown-content">
+                <button class="filter-button" data-category="all">All</button>
+                <button class="filter-button" data-category="food">Food</button>
+                <button class="filter-button" data-category="beauty">Beauty</button>
+                <button class="filter-button" data-category="tech">Tech</button>
+                <button class="filter-button" data-category="dry-cleaning">Drycleaning</button>
+                <button class="filter-button" data-category="eyewear">Eyewear</button>
+                <button class="filter-button" data-category="health">Health</button>
+            </div>
+        </div>
+
+        <!--Search filter-->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button id="search-button">Search</button>
+        </div>
+    </div>
+
+    <!--Stores Here-->
+    <div id="item-container">
+        <div class="item" data-category="food" id="item">
+            <img src="./img/Chicken Inn 2.png" alt="chicken inn"/>
+            Chicken Inn
+        </div>
+        <div class="item" data-category="beauty" id="item">
+            <img src="./img/LI Logo New_WhiteText_Black (1).png" alt="lintons"/>
+        </div>
+        <div class="item" data-category="tech" id="item">
+            <img src="./img/Samsung-Symbol.png" alt="samsung" />
+        </div>
+        <div class="item" data-category="dry-cleaning" id="item">
+            <img src="./img/lorenzo.png" alt="lorenzo" />
+        </div>
+        <div class="item" data-category="eyewear" id="item">
+            <img src="./img/optica-1.png" alt="optica" />
+        </div>
+        <div class="item" data-category="health" id="item">
+            <img src="./img/tendercare.png" alt="tendercare" />
+        </div>
+        <div class="item" data-category="health" id="item">
+            <img src="./img/tendercare.png" alt="tendercare" />
+        </div>
+        <div class="item" data-category="health" id="item">
+            <img src="./img/tendercare.png" alt="tendercare" />
+        </div>
+        <div class="item" data-category="health" id="item">
+            <img src="./img/tendercare.png" alt="tendercare" />
+        </div>
+        <div class="item" data-category="health" id="item">
+            <img src="./img/tendercare.png" alt="tendercare" />
+        </div>
+        <div class="item" data-category="health" id="item">
+            <img src="./img/tendercare.png" alt="tendercare" />
+        </div>
+        <div class="item" data-category="health" id="item">
+            <img src="./img/tendercare.png" alt="tendercare" />
+        </div>
+        <div class="item" data-category="health" id="item">
+            <img src="./img/tendercare.png" alt="tendercare" />
+        </div>
+        <div class="item" data-category="health" id="item">
+            <img src="./img/tendercare.png" alt="tendercare" />
+        </div>
+    </div>
+
+    <!--Pagination-->
+    <ul class="pagination" id="pagination">
+        <!-- Pagination links will be added here dynamically -->
+    </ul>
+
+    <!--Footer-->
+    
+
+    <!--JS Links-->
+    <script src="header.js"></script>
+    <script src="./filter/filter.js"></script>
+    <script src="script.js"></script>
+    <script src="./filter/filter.js"></script>
+    <script src="slider.js"></script>
+    <script src="pagination.js"></script>
+    <script src="status.js"></script>
+    <script src="nav-response.js"></script>
+</body>
+</html>
