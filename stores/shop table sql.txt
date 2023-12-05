@@ -8,6 +8,7 @@ CREATE TABLE Shop (
     shop_images TEXT,
     opening_hours TIME,
     closing_hours TIME,
+    shop_location VARCHAR(255),
     shop_mobile_number VARCHAR(15),
     shop_email VARCHAR(255),
     shop_facebook_link VARCHAR(255),
