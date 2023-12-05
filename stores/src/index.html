@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Shop Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Add Shop Details</h2>
+
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <!-- Shop Name -->
+            <label for="shop_name">
+                <img src="../assets/img/asterisk.png" alt="required" style="width: 20px; height: 20px;"/>
+                 Shop Name:</label>
+            <input type="text" name="shop_name" required>
+
+            <!-- Shop Logo Image -->
+            <label for="shop_logo_image">
+                <img src="../assets/img/asterisk.png" alt="required" style="width: 20px; height: 20px;"/>
+                Shop Logo:</label>
+            <input type="file" name="shop_logo_image" accept="image/*" required>
+
+            <!-- Shop Category -->
+            <label for="shop_category">
+                <img src="../assets/img/asterisk.png" alt="required" style="width: 20px; height: 20px;"/>
+                Shop Category:</label>
+            <input type="text" name="shop_category" required>
+
+            <!-- Shop Description -->
+            <label for="shop_description">
+                <img src="../assets/img/asterisk.png" alt="required" style="width: 20px; height: 20px;"/>
+                Shop Description:</label>
+            <textarea name="shop_description" required></textarea>
+
+            <!-- Shop Motto -->
+            <label for="shop_motto">Shop Motto:</label>
+            <input type="text" name="shop_motto">
+
+            <!-- Shop Images (comma-separated URLs) -->
+            <label for="shop_images">Shop Images (comma-separated URLs):</label>
+            <input type="file" name="shop_images[]" accept="image/*" multiple>
+
+            <!-- Opening Hours -->
+            <label for="opening_hours">
+                <img src="../assets/img/asterisk.png" alt="required" style="width: 20px; height: 20px;"/>
+                Opening Hours:</label>
+            <input type="time" name="opening_hours" required>
+
+            <!-- Closing Hours -->
+            <label for="closing_hours">
+                <img src="../assets/img/asterisk.png" alt="required" style="width: 20px; height: 20px;"/>
+                Closing Hours:</label>
+            <input type="time" name="closing_hours" required>
+
+            <!--Floor-->
+            <label for="floors">
+                <img src="../assets/img/asterisk.png" alt="required" style="width: 20px; height: 20px;"/>
+                Choose Location:</label>
+            <select name="floors" id="floors" required>
+                <option value="Basement">Basement</option>
+                <option value="Ground floor">Ground Floor</option>
+                <option value="First floor">First Floor</option>
+                <option value="Second floor">Second Floor</option>
+                <option value="Third floor">Third Floor</option>
+            </select>
+
+            <!-- Shop Mobile Number -->
+            <label for="shop_mobile_number">Shop Mobile Number:</label>
+            <input type="tel" name="shop_mobile_number" pattern="[0-9]{10,15}">
+
+            <!-- Shop Email -->
+            <label for="shop_email">Shop Email:</label>
+            <input type="email" name="shop_email">
+
+            <!-- Social Media Links -->
+            <label for="shop_facebook_link">Facebook Link:</label>
+            <input type="text" name="shop_facebook_link">
+
+            <label for="shop_instagram_link">Instagram Link:</label>
+            <input type="text" name="shop_instagram_link">
+
+            <label for="shop_youtube_link">YouTube Link:</label>
+            <input type="text" name="shop_youtube_link">
+
+            <label for="shop_twitter_link">Twitter Link:</label>
+            <input type="text" name="shop_twitter_link">
+
+            <label for="shop_website_link">Website Link:</label>
+            <input type="text" name="shop_website_link">
+
+            <!-- Submit Button -->
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</body>
+</html>
