@@ -65,12 +65,13 @@
         if ($result->num_rows > 0) {
             echo "<table id='shopTable'>
                     <tr>
-                        <th>ID</th>
+                        
                         <th>Logo</th>
                         <th>Shop Name</th>
                         <th>Category</th>
                         <th>Opening Hours</th>
                         <th>Closing Hours</th>
+                        <th>Location</th>
                         <th>Mobile Number</th>
                         <th>Email</th>
                         <th>Facebook</th>
@@ -83,12 +84,13 @@
 
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
-                echo "<td>" . $row["id"] . "</td>";
+                
                 echo "<td> <img src='" . $row["shop_logo_image"] . "' alt = 'Logo' style='width:50px;height:50px;'/></td>";
                 echo "<td>" . $row["shop_name"] . "</td>";
                 echo "<td>" . $row["shop_category"] . "</td>";
                 echo "<td>" . $row["opening_hours"] . "</td>";
                 echo "<td>" . $row["closing_hours"] . "</td>";
+                echo "<td>" . $row["shop_location"] . "</td>";
                 echo "<td>" . $row["shop_mobile_number"] . "</td>";
                 echo "<td>" . $row["shop_email"] . "</td>";
                 echo "<td>" . $row["shop_facebook_link"] . "</td>";
@@ -99,6 +101,7 @@
                 echo "<td>
                         <a href='edit_shop.php?id=" . $row["id"] . "'>Edit</a>
                         <a href='delete_shop.php?id=" . $row["id"] . "' onclick='return confirm(\"Are you sure you want to remove this shop? This action cannot be undone\")'>Delete</a>
+                        <a href='shop.php?id=" . $row["id"] . "'>View</a>
                       </td>";
                 echo "</tr>";
             }
@@ -118,7 +121,9 @@
             }
             echo "</div>";
         } else {
-            echo "No results found.";
+            echo "
+            <iframe src='https://giphy.com/embed/xUStFKHmuFPYk' width='480' height='275' frameBorder='0' class='giphy-embed' allowFullScreen></iframe><p><a href='https://giphy.com/gifs/giphyqa-xUStFKHmuFPYk'></a></p>
+            No results found.";
         }
 
         $conn->close();
@@ -135,7 +140,7 @@
             tr = table.getElementsByTagName("tr");
 
             for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[2]; // Index 2 corresponds to Shop Name column
+                td = tr[i].getElementsByTagName("td")[1]; // Index 1 corresponds to Shop Name column
                 if (td) {
                     txtValue = td.textContent || td.innerText;
                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -155,7 +160,7 @@
             tr = table.getElementsByTagName("tr");
 
             for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[3]; // Index 3 corresponds to Category column
+                td = tr[i].getElementsByTagName("td")[2]; // Index 2 corresponds to Category column
                 if (td) {
                     txtValue = td.textContent || td.innerText;
                     if (filter === "ALL" || txtValue.toUpperCase() === filter) {
