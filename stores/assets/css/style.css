@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shop-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    width: calc(25% - 20px); /* Adjust the width as needed */
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.shop-card a{    
+    text-decoration: none;
+    text-align: center;
+    color: #000;
+    font-size: 3rem;
+    padding: 20px;
+    background: #007bff;
+}
+
+.shop-card:hover{
+    background: #302f2f;
+    transition: ease all .4s;
+}
+
+.shop-card a:hover{
+    color: rgb(238, 30, 193);
+    transition: ease all .5s;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.search-filter {
+    margin-bottom: 20px;
+}
+
+input[type="text"], select {
+    padding: 8px;
+    margin: 5px 0;
+}
+
+
