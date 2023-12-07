@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Shop Details</title>
-    <link rel="stylesheet" href="edit.css">
+    <link rel="stylesheet" href="./css/edit.css">
 </head>
 <body>
 
@@ -27,13 +27,11 @@
             // Handle form submission and update the database
             $id = $_POST["id"];
             $shop_name = $_POST["shop_name"];
-            $shop_logo_image = $_POST["shop_logo_image"];
             $shop_category = $_POST["shop_category"];
             $shop_description = $_POST["shop_description"];
             $shop_motto = $_POST["shop_motto"];
             $opening_hours = $_POST["opening_hours"];
             $closing_hours = $_POST["closing_hours"];
-            $shop_location = $_POST["shop_location"];
             $shop_mobile_number = $_POST["shop_mobile_number"];
             $shop_email = $_POST["shop_email"];
             $shop_facebook_link = $_POST["shop_facebook_link"];
@@ -42,11 +40,19 @@
             $shop_twitter_link = $_POST["shop_twitter_link"];
             $shop_website_link = $_POST["shop_website_link"];
 
-             // Upload Shop Logo Image
+            // Upload Shop Logo Image
             $target_dir = "media/";
             $logo_image_name = basename($_FILES["shop_logo_image"]["name"]);
             $target_logo_image = $target_dir . $logo_image_name;
             move_uploaded_file($_FILES["shop_logo_image"]["tmp_name"], $target_logo_image);
+
+            // Upload Shop Images
+            $target_images = [];
+            foreach ($_FILES["shop_images"]["name"] as $key => $image_name) {
+                $target_image = $target_dir . basename($image_name);
+                move_uploaded_file($_FILES["shop_images"]["tmp_name"][$key], $target_image);
+                $target_images[] = $target_image;
+            }
 
             $sql = "UPDATE Shop SET
                     shop_name = '$shop_name',
@@ -54,9 +60,9 @@
                     shop_category = '$shop_category',
                     shop_description = '$shop_description',
                     shop_motto = '$shop_motto',
+                    shop_images =  '" . implode(",", $target_images) . "',
                     opening_hours = '$opening_hours',
                     closing_hours = '$closing_hours',
-                    shop_location = '$shop_location',
                     shop_mobile_number = '$shop_mobile_number',
                     shop_email = '$shop_email',
                     shop_facebook_link = '$shop_facebook_link',
@@ -67,13 +73,9 @@
                     WHERE id = $id";
 
             if ($conn->query($sql) === TRUE) {
-                echo "<script>alert('Shop updated successfully');
-                    window.location.href = 'retrieve.php';
-                </script>";
+                echo "<p>Shop details updated successfully.</p>";
             } else {
-                echo "<script>alert('Error Updating Shop Details');
-                window.location.href = 'retrieve.php';
-            </script>";
+                echo "Error updating shop details: " . $conn->error;
             }
         }
 
@@ -89,10 +91,7 @@
                 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                     <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
                     <label for="shop_name">Shop Name:</label>
-                    <input type="text" name="shop_name" value="<?php echo $row["shop_name"]; ?>">
-
-                    <label for="shop_logo_image">Shop Logo:</label>
-                    <input type="file" name="shop_logo_image" accept="image/*">
+                    <input type="text" name="shop_name" value="<?php echo $row["shop_name"]; ?>" required>
 
                     <label for="shop_category">Shop Category:</label>
                     <input type="text" name="shop_category" value="<?php echo $row["shop_category"]; ?>">
@@ -103,9 +102,6 @@
                     <label for="shop_motto">Shop Motto:</label>
                     <input type="text" name="shop_motto" value="<?php echo $row["shop_motto"]; ?>">
 
-                    <label for="shop_images">Shop Images:</label>
-                    <input type="file" name="shop_images[]" accept="image/*" value="<?php echo $row["shop_images"]; ?>">
-
                     <label for="opening_hours">Opening Hours:</label>
                     <input type="time" name="opening_hours" value="<?php echo $row["opening_hours"]; ?>">
 
@@ -115,14 +111,14 @@
                     <label for="shop_category">Shop Category:</label>
                     <input type="text" name="shop_category" value="<?php echo $row["shop_category"]; ?>">
 
-                    <label for="floors">Choose Location:</label>
+                    <!-- <label for="floors">Choose Location:</label>
                     <select name="floors" id="floors">
                         <option value="Basement">Basement</option>
                         <option value="Ground Floor">Ground Floor</option>
                         <option value="First Floor">First Floor</option>
                         <option value="Second Floor">Second Floor</option>
                         <option value="Third Floor">Third Floor</option>
-                    </select>
+                    </select> -->
 
                     <label for="shop_mobile_number">Shop Mobile Number:</label>
                     <input type="tel" name="shop_mobile_number" pattern="[0-9]{10,15}" value="<?php echo $row["shop_mobile_number"]; ?>">                    
@@ -141,8 +137,7 @@
 
                     <label for="shop_website_link">Facebook Link:</label>
                     <input type="text" name="shop_website_link" value="<?php echo $row["shop_website_link"]; ?>">
-
-                    <!-- Add other form fields for the shop details here -->
+                    
 
                     <input type="submit" value="Update Shop Details">
                 </form>
@@ -151,7 +146,10 @@
                 echo "Shop not found.";
             }
         } else {
-            echo "Invalid request.";
+            echo "<script>
+                alert('Error Updating Shop.');
+                window.location.href='retrieve.php';
+            </script>";
         }
 
         $conn->close();
