@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Marcellus&family=Montserrat:wght@400;600&display=swap');
+
+#background-video{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.logo{
+    text-align: center;
+}
+
+.logo img{
+    width: 500px;
+}
+
+.links{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.links ul{
+    list-style: none;
+    display: flex;
+    gap: 4rem;
+}
+
+.links ul li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.links ul li img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.links ul li img:hover{
+    transform: scale(1.2);
+    transition: all ease .4s;
+}
+
+.links ul li a{
+    text-decoration: none;
+    color: aliceblue;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.links ul li a:hover{
+    color: #e91fd9;
+    transition: all ease .4s;
+}
+
+.footer{
+    position: absolute;
+    background: rgba(0,0,0,.5);
+    width: 99.5%;
+    bottom: 0;
+    color: aliceblue;
+}
+
+.footer p{
+    text-align: center;
+}
+
+
+

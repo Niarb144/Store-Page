@@ -1,0 +1,32 @@
+<?php
+// Database connection parameters
+$host = "your_database_host";
+$username = "your_database_username";
+$password = "your_database_password";
+$database = "your_database_name";
+
+// Create a database connection
+$conn = new mysqli($host, $username, $password, $database);
+
+// Check the connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the selected value from the form
+    $selectedValue = $_POST["selector"];
+
+    // Prepare and execute the SQL query to insert the value into the database
+    $sql = "INSERT INTO your_table_name (column_name) VALUES ('$selectedValue')";
+    if ($conn->query($sql) === TRUE) {
+        echo "Value uploaded successfully!";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+// Close the database connection
+$conn->close();
+?>

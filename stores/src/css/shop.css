@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Marcellus&family=Montserrat:wght@400;600&family=Nanum+Myeongjo&family=Noto+Serif:wght@300&display=swap');
+
+/* .container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.shop-info {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+    width: 500px;
+    height: 400px;
+    color: #000;
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+}
+
+.shop-info .logo img {
+    width: 100px;
+    height: auto;
+}
+
+.shop-info a{
+    margin-top: 5rem;
+    background: #e91fd9;
+    padding: 8px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.shop-info a:hover{
+    background: #fc1de9;
+    transition: all ease .5s;
+} */
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+.logo img{
+    width: 200px;
+    height: auto;
+}
+
+.shop-container {
+    display: flex;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.carousel {
+    width: 70%;
+    overflow: hidden;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+.single-image {
+    width: 40%;
+    border: 0.5px solid #fafafa;
+    margin-left: 2rem;
+    overflow: hidden; /* Ensure image does not overflow the div */
+    position: relative;
+}
+
+.single-image img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.single-image img:hover{
+    transform: scale(1.1);
+    transition: all ease-in-out .5s;
+}
+
+.shop-info {
+    /* background-color: blueviolet; */
+    width: 60%;
+    margin-left: 1rem;
+    margin-right: 2rem;
+    padding-left: 20px;
+    line-height: 2rem;
+}
+
+.shop-info-items{
+    width: 80%;
+    margin-left: auto;
+    margin-top: 2rem;
+}
+
+.shop-container a{
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.shop-container h2{
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 2.5rem;
+    font-weight:200;
+}
+
+.shop-container .shop-website{
+    margin-left: 4px;
+}
+
+.shop-container .shop-info .shop-info-items .shop_website a{
+    padding: 7px;
+    border-radius: 5px;
+    color: #df14df;
+    font-weight: 400;
+}
+
+.shop-container .shop-info .shop-info-items .shop_website a:hover{
+    text-decoration: underline;
+    transition: all ease .5s;
+}
+
+.shop-container .shop-info .shop-info-items .social-media-links{
+    margin-left: 4px;
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.shop-container .shop-info .shop-info-items .social-media-links a{
+    padding: 10px;
+    color: #383838;
+}
+
+.shop-container .shop-info .shop-info-items .social-media-links a:hover{
+    color: #ff1eff;
+    transition: all ease .5s;
+}
+
+.shop-container .shop-info .shop-info-items .location{
+    margin-left: 4px;
+}
+
+.shop-container .shop-info .shop-info-items .location a{
+    padding: 7px;
+    border-radius: 5px;
+    color: #df14df;
+    font-weight: 400;
+}
+
+.shop-container .shop-info .shop-info-items .location a:hover{
+    text-decoration: underline;
+    transition: all ease .5s;
+}
