@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 300px;
+    margin: 50px auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.password-input {
+    position: relative;
+}
+
+input[type="password"] {
+    width: calc(100% - 30px);
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+}
