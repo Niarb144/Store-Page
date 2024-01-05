@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Marcellus&family=Montserrat:wght@400;600&family=Noto+Serif:wght@300&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shop-card {
+    border: 1px solid #000000;
+    padding: 10px;
+    margin: 10px;
+    width: calc(25% - 20px); /* Adjust the width as needed */
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.shop-card a{    
+    text-decoration: none;
+    text-align: center;
+    color: #000;
+    font-size: 3rem;
+    font-family: 'Noto Serif', serif;
+}
+
+.shop-card a:hover{
+    color: rgb(238, 30, 193);
+    transition: ease all .5s;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: black;
+    
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: pink;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.search-filter {
+    margin-bottom: 20px;
+}
+
+input[type="text"], select {
+    padding: 8px;
+    margin: 5px 0;
+}
+
+.container h2{
+    font-family: 'Noto Serif', serif;
+    font-weight: 200;
+}
+
+@media screen and (max-width: 1440px){
+    .shop-card {
+    border: 1px solid #000000;
+    padding: 10px;
+    margin: 10px;
+    width: calc(25% - 20px); /* Adjust the width as needed */
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.shop-card a{    
+    text-decoration: none;
+    text-align: center;
+    color: #000;
+    font-size: 1.5rem;
+    font-family: 'Noto Serif', serif;
+}
+}
+
+@media screen and (max-width: 1080px){
+    .shop-card {
+    border: 1px solid #000000;
+    padding: 10px;
+    margin: 10px;
+    width: calc(30% - 10px); /* Adjust the width as needed */
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.shop-card a{    
+    text-decoration: none;
+    text-align: center;
+    color: #000;
+    font-size: 1.5rem;
+    font-family: 'Noto Serif', serif;
+}
+
+.shop-card p{
+    font-size: 0.75rem;
+}
+}
+
+@media screen and (max-width: 768px){
+    .container{
+        width: 99.4%;
+        margin-left: auto;
+        margin-top: 2rem;
+    }
+    
+     .shop-card {
+    border: 1px solid #000000;
+    padding: 10px;
+    margin: 10px;
+    width: calc(50% - 20px); /* Adjust the width as needed */
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+    .shop-card a{    
+        text-decoration: none;
+        text-align: center;
+        color: #000;
+        font-size: 1.2rem;
+        font-family: 'Noto Serif', serif;
+    }
+}
+
+
