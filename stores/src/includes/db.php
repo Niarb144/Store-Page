@@ -1,8 +1,8 @@
 <?php 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "stores";
+    $servername = "localhost:3306";
+    $username = "theimaaraco_gallery_user";
+    $password = "gallery@theimaara";
+    $dbname = "theimaaraco_gallery";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 

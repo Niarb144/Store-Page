@@ -23,7 +23,6 @@
     .socials-container{
         display: block;
         width: 20%;
-        background-image: url('https://theimaara.co.ke/assets/img/petal.svg');
         background-size: cover;
         background-position: bottom;
         background-repeat: no-repeat;

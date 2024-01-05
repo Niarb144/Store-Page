@@ -1,14 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "stores";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include './includes/db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $shop_name = $_POST["shop_name"];

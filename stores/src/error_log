@@ -1,0 +1,1 @@
+[04-Jan-2024 09:22:19 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/theimaaraco/public_html/shops/src/delete_shop.php on line 7

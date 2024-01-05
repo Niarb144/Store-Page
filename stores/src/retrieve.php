@@ -18,10 +18,10 @@
                 <option value="all">All Categories</option>
                 <!-- Add options dynamically from the database -->
                 <?php
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
-                $dbname = "stores";
+                $servername = "localhost:3306";
+                $username = "theimaaraco_gallery_user";
+                $password = "gallery@theimaara";
+                $dbname = "theimaaraco_gallery";
 
                 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -42,6 +42,8 @@
                 ?>
             </select>
         </div>
+        
+         <a href="export_csv.php" download="data.csv">Download Data as CSV</a>
 
         <?php
         $itemsPerPage = 100; // Number of items per page
@@ -59,13 +61,13 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "SELECT * FROM Shop LIMIT $offset, $itemsPerPage";
+        $sql = "SELECT * FROM Shop ORDER BY shop_name ASC LIMIT $offset, $itemsPerPage";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             echo "<table id='shopTable'>
                     <tr>
-                        
+                        <th>No.</th>
                         <th>Logo</th>
                         <th>Shop Name</th>
                         <th>Category</th>
@@ -81,10 +83,12 @@
                         <th>Website</th>
                         <th>Action</th>
                     </tr>";
+                    
+                    $row_number = 1;
 
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
-                
+                echo "<td>" .$row_number. "</td>";
                 echo "<td> <img src='" . $row["shop_logo_image"] . "' alt = 'Logo' style='width:50px;height:50px;'/></td>";
                 echo "<td>" . $row["shop_name"] . "</td>";
                 echo "<td>" . $row["shop_category"] . "</td>";
@@ -104,6 +108,9 @@
                         <a href='shop.php?id=" . $row["id"] . "'>View</a>
                       </td>";
                 echo "</tr>";
+                
+                //increment row number
+                $row_number++;
             }
 
             echo "</table>";
@@ -140,7 +147,7 @@
             tr = table.getElementsByTagName("tr");
 
             for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[1]; // Index 1 corresponds to Shop Name column
+                td = tr[i].getElementsByTagName("td")[2]; // Index 2 corresponds to Shop Name column
                 if (td) {
                     txtValue = td.textContent || td.innerText;
                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -160,7 +167,7 @@
             tr = table.getElementsByTagName("tr");
 
             for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[2]; // Index 2 corresponds to Category column
+                td = tr[i].getElementsByTagName("td")[3]; // Index 3 corresponds to Category column
                 if (td) {
                     txtValue = td.textContent || td.innerText;
                     if (filter === "ALL" || txtValue.toUpperCase() === filter) {

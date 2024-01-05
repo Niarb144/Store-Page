@@ -1,15 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "stores";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+include './includes/db.php';
 // Check if the ID parameter is set in the URL
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $id = $_GET['id'];

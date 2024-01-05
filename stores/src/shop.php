@@ -1,4 +1,9 @@
 <?php
+    ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
     include './includes/db.php';
 
 
@@ -92,7 +97,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                         
                         if ($row["shop_website_link"] > 0){
                             echo "<div class='shop_website'>";
-                             echo "<a href='" . $row["shop_website_link"] . "' target='blank'><i class='bx bx-link'></i>Visit Site</a>";
+                             echo "<a href='" . $row["shop_website_link"] . "' target='_blank'><i class='bx bx-link'></i>Visit Site</a>";
                             echo "</div>";
                          }
 
@@ -107,16 +112,16 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                          //social media links
                          echo "<div class='social-media-links'>";
                          if ($row["shop_instagram_link"] > 0){
-                             echo "<a href='" . $row["shop_instagram_link"] . "' target='blank'><i class='bx bxl-instagram bx-md'></i></a>";
+                             echo "<a href='" . $row["shop_instagram_link"] . "' target='_blank'><i class='bx bxl-instagram bx-md'></i></a>";
                          }
                          if ($row["shop_facebook_link"] > 0){
-                             echo "<a href='" . $row["shop_facebook_link"] . "' target='blank'><i class='bx bxl-facebook-square bx-md' ></i></a>";
+                             echo "<a href='" . $row["shop_facebook_link"] . "' target='_blank'><i class='bx bxl-facebook-square bx-md' ></i></a>";
                          }
                          if ($row["shop_twitter_link"] > 0){
-                             echo "<a href='" . $row["shop_twitter_link"] . "' target='blank'><i class='bx bxl-twitter bx-md' ></i></a>";
+                             echo "<a href='" . $row["shop_twitter_link"] . "' target='_blank'><i class='bx bxl-twitter bx-md' ></i></a>";
                          }
                          if ($row["shop_youtube_link"] > 0){
-                             echo "<a href='" . $row["shop_youtube_link"] . "' target='blank'><i class='bx bxl-youtube bx-md' ></i></a>";
+                             echo "<a href='" . $row["shop_youtube_link"] . "' target='_blank'><i class='bx bxl-youtube bx-md' ></i></a>";
                          }
                          echo "</div>";
 
